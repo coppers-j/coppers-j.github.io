@@ -6,15 +6,15 @@ highlighter:      pygments
 permalink:        pretty
 
 # Setup
-title:            coppers-j blog
+title:            coppers-j
 tagline:          'A blog by James Copperthwaite'
-description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
+description:      'A blog by <a href="twitter.com/coppers_j" target="_blank">James Copperthwaite</a> about projects I work on and things that interest me. gihub alias <a href="github.com/user/coppers-j" target="_blank">@coppers-j</a>.'
 url:              http://coppers-h.github.io
 baseurl:          /
 
 author:
   name:           'James Copperthwaite'
-  url:            https://twitter.com/mdo
+  url:            https://twitter.com/coppers-j
 
 paginate:         5
 
