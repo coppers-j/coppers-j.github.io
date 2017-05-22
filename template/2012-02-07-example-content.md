@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: posts
 title: Example content
+categories: ML
 ---
 
 
