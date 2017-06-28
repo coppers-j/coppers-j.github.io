@@ -2,10 +2,9 @@
 layout: post
 title: Machine Learning Series
 categories: ML
-
 ---
 
-This is just a precursor post outlining an upcoming series of posts about Machine Learning and as an introduction to the topic for beginners and as a reference for those who may already have experience (myself).
+This is just a precursor post outlining an upcoming series of posts about Machine Learning. The posts are not only intended as an introduction to the topic for beginners but also as a reference for those who may already have experience (i.e. myself).
 
 Topics covered will include:
 * Mathematics Foundations for Machine Learning
