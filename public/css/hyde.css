@@ -248,3 +248,21 @@ a.sidebar-nav-item:focus {
 .theme-base-0f .related-posts li a:hover {
   color: #8f5536;
 }
+
+/* Test Blue */
+.theme-base-tb .sidebar {
+  background-color: rgb(17, 30, 108);
+}
+.theme-base-tb .content a,
+.theme-base-tb .related-posts li a:hover {
+  color: rgb(17, 30, 108);
+}
+
+/* Test Color */
+.theme-base-test .sidebar {
+  background-color: #8f5536;
+}
+.theme-base-test .content a,
+.theme-base-test .related-posts li a:hover {
+  color: #8f5536;
+}
