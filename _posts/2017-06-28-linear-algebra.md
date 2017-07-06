@@ -25,8 +25,6 @@ In this post I'll cover the following main topics relevant to machine learning:
 5. Dot and Cross Products
 6. Transformations
 7. Eigenvectors/Eigenvalues
-8. Vector Spaces
-9. Real World Applications
 
 
 ## 1. Vectors and Matrices
@@ -87,7 +85,7 @@ In machine learning matrices are used to speed process up, e.g. many GPU's used 
 
 Matrices are denoted by a upper-case  letter (unlike a vector) and may be seen in papers/textbooks with square, round or no brackets.
 
-$$ A =  \begin{matrix}
+$$ \mathbf{A} =  \begin{matrix}
                     1 & 2 & 3 \\
                     4 & 5 & 6 \\
                     7 & 8 & 9 \\
@@ -185,18 +183,18 @@ Matrices can be used in equations (hence linear algebra...) however cannot alway
 <p class="message">
   <strong>1.</strong> Matrices must be the same size
 
-  <strong>2.</strong> Number of columns of the first matrix must equal the number of rows of the second matrix. The resultant matrix has the same number of rows as the first matrix and the same number of columns as the second matrix.
+  <strong>2.</strong> Number of columns of the first matrix must equal the number of rows of the second matrix. The resultant matrix has the same number of rows as the first matrix and the same number of columns as the second matrix. Note that order matters in matrix multiplication.
 </p>
 
 Matrix Multiplication dimensions:
 
-$$ A_{mn}$$ has dimensions of $$m \times n$$
+$$ \mathbf{A}_{mn}$$ has dimensions of $$m \times n$$
 
-$$ B_{ij}$$ has dimensions of $$i \times j$$
+$$ \mathbf{B}_{ij}$$ has dimensions of $$i \times j$$
 
-$$A_{mn} \times B_{ij} = C_{mj}$$ where $$n = i$$
+$$ \mathbf{A}_{mn} \times \mathbf{B}_{ij} = \mathbf{C}_{mj}$$ where $$n = i$$
 
-$$C_{mj}$$ has dimensions of $$m \times j$$
+$$ \mathbf{C}_{mj}$$ has dimensions of $$m \times j$$
 
 ## 3. The Unit Vector
 
@@ -204,17 +202,76 @@ The unit vector is a fairly simple concept, it's a vector with a magnitude of 1.
 
 ## 4. Matrix Identities, Inverses and Determinants
 
+The identity matrix (written as $$\mathbf{I}$$) is a special matrix that when multiplied with any other matrix gives the matrix itself.
+
+$$\mathbf{A}\cdot \mathbf{I} = \mathbf{A}$$
+
+The inverse of a matrix is used in place of dividing a matrix, instead of dividing matrix $$A$$ by matrix $$B$$ we multiply matrix $$A$$ by the **inverse** of matrix $$B$$ (written as $$B^{-1}$$). it is important to note that inverses only exist for **square** matrices. When a matrix is multiplied by itself and its inverse the result is the identity matrix.
+
+$$\mathbf{AA}^{-1} = \mathbf{I}$$
+
+The inverse is calculated using the determinant, this is a somewhat trivial process that you are asked to do in linear algebra courses but in machine learning you just usually call a function and it does it for you.  Most often you are taught how to deal with finding the inverse of $$2\times2$$ and $$3\times3$$ matrices but not always introduced to a general formula. However determinants can be calculated for any number of dimensions but I will not cover the formula or algorithm in this blog post as it's not really relevant to machine learning, you just need to know it exists.
+
+$$\mathbf{A}^{-1} = \frac{1}{\det(\mathbf{A})} \mathrm{adj}(\mathbf{A})$$
+
+Where $$\det(\mathbf{A})$$ is the determinant of $$\mathbf{A}$$ often written as two bars either side of the matrix.
+
+$$\begin{vmatrix} \mathbf{A} \end{vmatrix} = \begin{vmatrix} 1 & 2 \\
+                                                             3 & 4 \\
+                                                              \end{vmatrix}$$
+
+$$\mathrm{adj}(\mathbf{A})$$ refers to the adjugate of $$\mathbf{A}$$ and is equal to the transpose of the cofactor matrix of A.
+
+$$\mathrm{adj}(\mathbf{A}) = \mathbf{C^T}$$
+
+$$\mathbf{A}^{-1} = \frac{1}{ \begin{vmatrix} \mathbf{A} \end{vmatrix} } \mathbf{C^T}$$
+
+The cofactor matrix can be found using **Cramer's Rule** and is usually taught in High School mathematics, if you are not familiar with it but want to know how it works, do a quick google search.
+
+The transpose of a matrix simply flips the matrix along its diagonal
+
+$$\mathbf{A} = \begin{bmatrix} 1 & 2 \\
+                      3 & 4 \\
+                      \end{bmatrix}, \mathbf{A^T} = \begin{bmatrix} 1 & 3 \\
+                                                                    2 & 4 \\
+                                                                    \end{bmatrix}$$
+
+$$(\mathbf{A}^T)^T = \mathbf{A}$$
+
+All of these are easy to find using matlab:
+
+{% highlight matlab %}
+% Initial Matrix
+A = [1, 2;
+     3, 4]
+
+% Inverse of A
+B = inv(A)
+
+% Determinant of A
+d = det(A)
+
+% Transpose of A
+T = A'
+
+{% endhighlight %}
 
 ## 5. Dot and Cross Products
 
+The dot and cross product operations are vector operations that are useful for different purposes, the dot product is usually used to find the angle between two vectors and yields a **scalar** result. The cross product yields a **vector** result and is used a lot in physics. You may or may not come across these when reading up about machine learning depending how in depth you study some ML processes. But I would assume most people have a good understanding of how these work
 
 ## 6. Transformations
 
+In machine learning and programming in general (e.g. in graphics programming) matrix transformations are used. Essentially you use a predefined matrix to transform a matrix in a given way. Whether that be scaling, rotating etc. Matrix transformations are not to be confused with kernel functions. Often in image processing and machine learning (particularly Convolutional Neural Networks) kernel functions are used instead of matrix transformations, to manipulate data. Kernel functions will be covered in a future blog post.
 
 ## 7. Eigenvectors/Eigenvalues
 
+Eigen vectors and Eigen values are a well used part of linear algebra for machine learning, two big areas are for Principal Component Analysis (PCA), used for dimensionality reduction and removing linear correlations and for facial recognition (Eigenfaces!). Both of these topics will be covered in their own blog posts.
 
-## 8. Vector Spaces
+The equation that outlines how eigenvectors and eigenvalues work is as follows:
 
+$$ \mathbf{A} \mathbf{x} = \lambda \mathbf{x} $$
 
-## 9. Real World Applications
+Where $$\mathbf{x}$$ is the eigenvector and $$\lambda$$ is the eigenvalue. When multiplying $$\mathbf{A}$$ by the eigenvector it is the same as multiplying the eigenvalue by the eigenvector. The eigenvalue basically tells us what effect multiplying $$\mathbf{A}$$ by the eigenvector has on the eigenvector. There can be multiple eigenvalues and eigenvectors for any given matrix. Rearranging this equation can be useful for many purposes. Applications will be discussed in future posts but this is here as a reference and a reminder of how they work.
+
+That is all! (for now) Again this was intended as a refresher for linear algebra that is used in machine learning and as the first post in my Machine Learning series. If I missed anything I feel is useful I'll add it in future blog posts or just explain it when I use it
