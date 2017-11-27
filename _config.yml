@@ -9,7 +9,7 @@ permalink:        /:categories/:title/
 # Setup
 title:            coppers-j
 tagline:          'A blog by James Copperthwaite'
-description:      'A blog by <a href="http://www.twitter.com/j_copperthwaite" target="_blank">James Copperthwaite</a> about projects I work on and things that interest me. gihub alias <a href="http://www.github.com/coppers-j" target="_blank">@coppers-j</a>.'
+description:      'A blog by <a href="http://www.twitter.com/j_copperthwaite" target="_blank">James Copperthwaite</a> about projects I work on and things that interest me. GitHub alias <a href="http://www.github.com/coppers-j" target="_blank">@coppers-j</a>.'
 url:              http://coppers-j.github.io
 baseurl:          /
 
