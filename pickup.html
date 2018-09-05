@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to genereate yourself a random numder</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+    var lines = ["If you were a book at a library, I'd Definitely be checking you out. <br>[FOLLOW-UP]<br> If you were the words on a page, you'd be fine print","Did you see the mistake in the music charts this week?<br>[FOLLOW-UP]<br>They forgot to List you as the hottest single", "Do you have a map? because I just got lost in your eyes.", "Do you have a name, or can I call you mine?", "My doctor said I'm lacking vitamin U", "I used to think happines started with a H but now I know it starts with U", "Is their an airport nearby?? or is my heart just taking off!", "are you cinderella? cause I see that dress coming off at midnight", "Do you like whales? we should go humpback at my place", ]
+
+function myFunction() {
+    document.getElementById("demo").innerHTML = lines[randomIndex()];
+}
+
+function randomIndex() {
+    return Math.floor(Math.random() * lines.length);
+}
+</script>
+
+</body>
+</html>
+
