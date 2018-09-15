@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title> Dashboard </title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  </head>
+
+    <body onload="dayLoad()" background="https://media.giphy.com/media/Jdhbkf4riM29a/giphy.gif" style="text-align: center;">
+        <div align="centre">
+            <h1 align="center"> Dashboard </h1>
+            <hr width="100%" size="2" align="center">
+            <h2 align="center"> Who wants to get laid? </h2>
+            <p align="center"> Click the button to generate yourself a pickup line </p>
+
+           <p><button class="w3-button w3-block w3-teal" onclick="getPickUpLine()">Get me Laid!</button>
+
+</p>         <p id="pickups"></p>
+
+            <script>
+                var lines = ["If you were a book at a library, I'd Definitely be checking you out. <br>[FOLLOW-UP]<br> If you were the words on a page, you'd be fine print",
+                "Did you see the mistake in the music charts this week?<br>[FOLLOW-UP]<br>They forgot to List you as the hottest single",
+                "Do you have a map? because I just got lost in your eyes.",
+                "Do you have a name, or can I call you mine?",
+                "My doctor said I'm lacking vitamin U",
+                "I used to think happines started with a H but now I know it starts with U",
+                "Is their an airport nearby?? or is my heart just taking off!",
+                "are you cinderella? cause I see that dress coming off at midnight",
+                "Do you like whales? we should go humpback at my place",
+                "Girl, are those space pants? Cause your butt is out of this world!",
+                "If I flip a coin, what are the chances of me getting head?",
+                "I'd take you to the movies but they don't let you take snacks inside",
+                " Call me shrek because i’m head ogre heels for you!",
+                " Are you a bank loan? Because you got my interest",
+                " Wanna grab a coffee because i like you a latte!",
+                " Are you the sun? Because you’re so beautiful it’s blinding me." ]
+
+                function getPickUpLine() {
+                    document.getElementById("pickups").innerHTML = "<h3>" + lines[randomIndex()] + "</h3>";
+                }
+
+                function randomIndex() {
+                    return Math.floor(Math.random() * lines.length);
+                }
+            </script>
+
+            <hr width="100%" size="2" align="center">
+        </div>
+
+        <div align="center">
+            <script>
+            function getDays() {
+                var then = new Date(2017, 12, 17),
+                    now  = new Date;
+                    return Math.round((now - then) / (1000 * 60 *60 *24));
+            }
+            function dayLoad() {
+                document.getElementById("daysnum").innerHTML = getDays();
+            }
+            </script>
+            <h2 align="center"> Shtats for Aidan </h2>
+            <p align="center"> Days without sex: <div id="daysnum"></div> days</p>
+            <p align="center"> Cuck counter: 3 cucks</p>
+            <hr width="100%" size="2" align="center">
+        </div>
+
+        <div align="centre">
+            <h2 align="center"> Where we dropping boys? </h2>
+            <p align="center"> Click the button to decide where to land! </p>
+
+            <p><button  class="w3-button w3-block w3-teal" onclick="getLocation()">Go!</button>
+
+</p>            <p id="locations"></p>
+
+            <script>
+                var locations = ["Tilted Towers", "Salty Springs", "Dusty Divot",
+                "Tomato Temple", "Lazy Links", "Paradise Palms", "Risky Reels",
+                "Haunted Hills", "Junk Junction", "Pleasant Park", "Greasy Grove",
+                "Lucky Landing", "Vikings!", "Race Track", "Mansion", "Wailing Woods",
+                "Fatal Fields"]
+
+                function getLocation() {
+                    document.getElementById("locations").innerHTML = "<h3>" + locations[randomIndex()] + "</h3>";
+                }
+
+                function randomIndex() {
+                    return Math.floor(Math.random() * lines.length);
+                }
+            </script>
+
+            <hr width="100%" size="2" align="center">
+        </div>
+    </body>
+</html>
